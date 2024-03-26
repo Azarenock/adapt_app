@@ -1,0 +1,27 @@
+{
+    "generic": "Information",
+    "questions": [
+        {
+            "question_text": "What is a meyoz?",
+            "question_type": "theory",
+            "question_difficulty": 3
+        },
+        {
+            "question_text": "What is a mitoze?",
+            "question_type":"theory",
+            "question_difficulty":2
+        }
+    ]
+}
+
+let getQuestionByDifficultyAndType = (qd, qt) => {
+    let shuffled = q.questions.sort( () => 0.5 - Math.random() );
+    for(let i = 0; i < shuffled.length; i++) {
+        if(shuffled[i].question_difficulty == qd && shuffled[i].question_type == qt) {
+            return shuffled[i];
+        }
+    }  
+    return false;  
+}
+
+getQuestionByDifficultyAndType(3, "theory");
